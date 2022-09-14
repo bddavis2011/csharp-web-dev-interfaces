@@ -11,6 +11,17 @@ namespace IceCreamShop
             List<Flavor> availableFlavors = menu.Flavors;
             List<Cone> availableCones = menu.Cones;
 
+            FlavorComparer comparer = new FlavorComparer();
+
+            availableFlavors.Sort(comparer);
+
+            ConeComparer compareCones = new ConeComparer();
+            availableCones.Sort(compareCones);
+            foreach (Cone c in availableCones)
+            {
+                Console.WriteLine(c);
+            }
+
         // TODO: Use a Comparer class to sort the 'flavors' array alphabetically by the 'name'
         //  field.
 
